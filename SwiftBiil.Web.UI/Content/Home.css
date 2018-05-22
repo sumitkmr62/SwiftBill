@@ -1,0 +1,66 @@
+﻿body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Average', serif;
+}
+
+#container {
+border:1px solid brown;
+}
+
+#leftmenu {
+    width:300px;
+border:1px solid cadetblue;
+float:left;
+position:absolute;
+top:180px;
+left:350px;
+height:400px;
+}
+
+#rightmenu {
+border: 1px solid crimson;
+float: right;
+position:absolute;
+right:400px;
+top:90px;
+}
+
+#divsalesreport {
+border:1px solid cornflowerblue;
+}
+
+#divpurchasereport {
+border: 1px solid cornflowerblue;
+}
+
+#divtools {
+border: 1px solid cornflowerblue;
+}
+
+#divsettings {
+border: 1px solid cornflowerblue;
+}
+
+.alignright {
+margin:auto;    
+}
+
+.rightButton {
+    background-color: #006699;
+    width: 240px;
+    height: 50px;
+}
+
+.leftitem {
+color:white;
+text-decoration:none;
+
+}
+
+#topitem {
+    width:100%;
+height:80px;
+border:1px solid red;
+text-align:center;
+}

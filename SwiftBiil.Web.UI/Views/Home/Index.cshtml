@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/Home.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="container">
+
+        <div id="leftmenu">
+            <div class="rightButton" id="topitem">
+                @Html.ActionLink("+ NEW INVOICE", "Create", "Invoice",new { @class="leftitem"})
+            </div>
+            <div class="rightButton">
+                @Html.ActionLink("+ QUOTATION", "Create", "Quotaion", new { @class = "leftitem" })
+            </div>
+            <div class="rightButton">
+                @Html.ActionLink("+ PROFORMA INVOICE", "Create", "ProformaInvoice", new { @class = "leftitem" })
+            </div>
+            <div class="rightButton">
+                @Html.ActionLink("+ BILL OF SUPPLY", "Create", "BillOfSupply", new { @class = "leftitem" })
+            </div>
+            <div class="rightButton">
+                @Html.ActionLink("+ DELIVERY NOTE CHALLAN", "Create", "DeliveryNoteChallan", new { @class = "leftitem" })
+            </div>
+            <div class="rightButton">
+                @Html.ActionLink("+ PURCHASE ORDER", "Create", "PurchaseOrder", new { @class = "leftitem" })
+            </div>
+        </div>
+        <!--End Of leftmenu-->
+
+        <div id="rightmenu">
+
+            <div id="divsalesreport">
+                <h5>SALES REPORT</h5>
+                <ul>
+                    <li><a href="#">Invoices</a></li>
+                    <li><a href="#">Quotations, Proformas & Challans</a></li>
+                    <li><a href="#">Clients</a></li>
+                    <li><a href="#">Products/Services</a></li>
+                </ul>
+
+            </div>
+
+            <div id="divpurchasereport">
+                <h5>PURCHASE REPORT</h5>
+                <ul>
+                    <li><a href="#">Vendors</a></li>
+                    <li><a href="#">Bills</a></li>
+                    <li><a href="#">Purchase Orders</a></li>
+                </ul>
+            </div>
+
+            <div id="divtools">
+                <h5>TOOLS</h5>
+                <ul>
+                    <li><a href="#">BackUp Data</a></li>
+                    <li><a href="#">Respore Data</a></li>
+                    <li><a href="#">GSTR Reports</a></li>
+                </ul>
+            </div>
+
+            <div id="divsettings">
+                <h5>SETTINGS</h5>
+                <ul>
+                    <li><a href="#">Company Details</a></li>
+                    <li><a href="#">Taxes</a></li>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Preferences</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <!--End of rightmenu-->
+    </div>
+</body>
+</html>
