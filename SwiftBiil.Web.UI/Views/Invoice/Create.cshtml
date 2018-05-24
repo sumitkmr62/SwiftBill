@@ -8,10 +8,302 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Invoice/CreateInvoice.css" rel="stylesheet" />
+
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <link href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
+
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+
+
     <title>New Invoice</title>
 </head>
 <body>
-    <div> 
+    <div id="container">
+        <div id="sectionone">
+            <div id="section1">
+                <div style="border:1px solid green">
+                    <h4>Document Data</h4>
+                </div>
+                <div style="border:1px solid green">
+                    <table>
+                        <tr>
+                            <td>Client</td>
+                            <td>
+                                <select>
+                                    <option>A & P Group Ltd. | Kanpur</option>
+                                    <option>Anand Dresses | Mumbai</option>
+                                    <option>Baster SRL | Sibley</option>
+                                    <option>IBM Bangalore | Mumbai</option>
+                                    <option>Lore Garments | Kanpur</option>
+                                </select>
+                            </td>
+                            <td>
+                                Document Number
+                            </td>
+                            <td>
+                                <input type="text" />
+                            </td>
+                            <td>
+                                Issue Date
+                            </td>
+                            <td>
+                                <input type="text" id="txtissuedate"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                PO Number
+                            </td>
+                            <td>
+                                <input type="text" />
+                            </td>
+                            <td>
+                                Payment Terms
+                            </td>
+                            <td>
+                                <select>
+                                    <option>NET 7</option>
+                                    <option>NET 10</option>
+                                    <option>NET 15</option>
+                                    <option>NET 30</option>
+                                    <option>NET 45</option>
+                                    <option>NET 60</option>
+                                    <option>NET 90</option>
+                                    <option>Due On Receipt</option>
+                                    <option>Due on the specified Date</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                P.O. Date
+                            </td>
+                            <td>
+                                <input type="text" id="txtpodate" />
+                            </td>
+                            <td>
+                                Due Date
+                            </td>
+                            <td>
+                                <input type="text" id="txtduedate" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Place Of Supply
+                            </td>
+                            <td>
+                                <select>
+                                    <option>Andhra Pradesh</option>
+                                    <option>Delhi</option>
+                                    <option>Mumbai</option>
+                                    <option>Calcutta</option>
+                                    <option>Tamilnadu</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div id="section2" style="border:1px solid green">
+                <table>
+                    <tr>
+                        <td>Product</td>
+                        <td>Description</td>
+                        <td>UoM</td>
+                        <td>QTY</td>
+                        <td>Unit Price</td>
+                        <td>Discount (%)</td>
+                        <td>Tax</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select>
+                                <option>Genius GM Optical Mouse</option>
+                                <option>Genius GM Optical Keyboard</option>
+                                <option>Genius GM Optical Graphics</option>
+                                <option>Genius GM Optical USB</option>
+                                <option>Genius GM Optical Laptop</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                        <td>
+                            <select>
+                                <option>Boxes</option>
+                                <option>CFT</option>
+                                <option>Centimeter</option>
+                                <option>Kilogram</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                        <td>
+                            <input type="text" />
+                        </td>
+                        <td>
+                            <select>
+                                <option>GST Rate 3%</option>
+                                <option>GST Rate 5%</option>
+                                <option>GST Rate 12%</option>
+                                <option>GST Rate 18%</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="button" value="+ ADD" />
+                        </td>
+                    </tr>                    
+                </table>
+                <div id="divdatatable">
+                    <!--Table for Jquery Data Table-->
+                    <table id="datatable">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Product/Service</th>
+                                <th>HSN/SAC</th>
+                                <th>Description</th>
+                                <th>UoM</th>
+                                <th>QTY</th>
+                                <th>Unit Price</th>
+                                <th>Value</th>
+                                <th>Discount (%)</th>
+                                <th>CGST</th>
+                                <th>SGST</th>
+                                <th>IGST</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>A4 Tech HS-800 Headphones</td>
+                                <td>S0000</td>
+                                <td>Sample Service Description</td>
+                                <td>Ton</td>
+                                <td>1.00</td>
+                                <td>15.00</td>
+                                <td>14.10</td>
+                                <td>6%</td>
+                                <td>0.00</td>
+                                <td>0.00</td>
+                                <td>0.00</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                    <!--End of Table for Jquery Data Table-->
+                </div>
+            </div>
+            <div id="section3">
+                <table id="tblsection3">
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            Discount on All
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            Add Shipping Packaging costs
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            Subject to Reverse Charges
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="+ More Options"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="section4">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            Add Payment
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" />
+                        </td>
+                        <td>
+                            Get Paid Online (PayPal)
+                        </td>
+                        <td>
+                            Total
+                        </td>
+                        <td>
+                            £0.00
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="section5">
+                <table id="tblsection5">
+                    <tr>
+                        <td>Note For Client</td>
+                        <td>Private Notes (not shown to client)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea cols="40" rows="5" style="resize:none;" placeholder="e.g.: Declaration or Terms & Conditions"></textarea>
+                        </td>
+                        <td>
+                            <textarea cols="40" rows="5" style="resize:none;"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="sectiontwo">
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" value="Preview Document"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
+    <script>
+        $(document).ready(function () {
+            $('#txtissuedate').datepicker();
+            $('#txtpodate').datepicker();
+            $('#txtduedate').datepicker();
+            $('#datatable').DataTable({
+                paging: false,
+                searching: false,
+                
+            });
+        });
+    </script>
 </body>
 </html>

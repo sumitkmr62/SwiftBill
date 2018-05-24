@@ -1,0 +1,18 @@
+﻿body {
+padding:0px;
+margin:0px;
+}
+
+#sectionone {
+border:1px solid black;
+}
+
+#sectiontwo {
+}
+
+#divdatatable {
+    border:1px solid green;
+}
+#datatable {
+    border: 1px solid green;
+}

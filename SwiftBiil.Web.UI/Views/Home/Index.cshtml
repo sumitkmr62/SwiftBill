@@ -14,23 +14,25 @@
     <div id="container">
 
         <div id="leftmenu">
-            <div class="rightButton" id="topitem">
-                @Html.ActionLink("+ NEW INVOICE", "Create", "Invoice",new { @class="leftitem"})
+            <div class="leftButton" id="topitem">
+                @Html.ActionLink("+ NEW INVOICE", "Create", "Invoice",null,new { @class="leftitem"})
             </div>
-            <div class="rightButton">
-                @Html.ActionLink("+ QUOTATION", "Create", "Quotaion", new { @class = "leftitem" })
+            <div id="quotationandproforma">
+                <div class="leftButton" id="idquotation">
+                    @Html.ActionLink("+ QUOTATION", "Create", "Quotaion", null, new { @class = "leftitem" })
+                </div>
+                <div class="leftButton" id="idproformainvoice">
+                    @Html.ActionLink("+ PROFORMA INVOICE", "Create", "ProformaInvoice", null, new { @class = "leftitem" })
+                </div>
             </div>
-            <div class="rightButton">
-                @Html.ActionLink("+ PROFORMA INVOICE", "Create", "ProformaInvoice", new { @class = "leftitem" })
+            <div class="leftButton" id="idbillofsupply">
+                @Html.ActionLink("+ BILL OF SUPPLY", "Create", "BillOfSupply",null, new { @class = "leftitem" })
             </div>
-            <div class="rightButton">
-                @Html.ActionLink("+ BILL OF SUPPLY", "Create", "BillOfSupply", new { @class = "leftitem" })
+            <div class="leftButton" id="idchallan">
+                @Html.ActionLink("+ DELIVERY NOTE CHALLAN", "Create", "DeliveryNoteChallan",null, new { @class = "leftitem" })
             </div>
-            <div class="rightButton">
-                @Html.ActionLink("+ DELIVERY NOTE CHALLAN", "Create", "DeliveryNoteChallan", new { @class = "leftitem" })
-            </div>
-            <div class="rightButton">
-                @Html.ActionLink("+ PURCHASE ORDER", "Create", "PurchaseOrder", new { @class = "leftitem" })
+            <div class="leftButton" id="idpurchaseorder">
+                @Html.ActionLink("+ PURCHASE ORDER", "Create", "PurchaseOrder",null, new { @class = "leftitem" })
             </div>
         </div>
         <!--End Of leftmenu-->
